@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{% static 'pictures/css/style.css' %}" rel="stylesheet" />
+    <script src="{% static 'pictures/js/activeChange.js' %}"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+<body>
+<div class="header">
+    <a class="" href="{% url 'romashko' %}">Главная</a>
+    <a class="" href="/romashko#infa" onclick="const links = document.querySelectorAll('.header a');
+    links.forEach(link => link.classList.remove('active'));this.classList.add('active');">О главнокомандующем</a>
+    <a class="" href="{% url 'articles' 0 %}">Статьи</a>
+    <div class="header-right">
+        <a href="https://t.me/sgrgrfbf">Telegram</a>
+    </div>
+</div>
+    {% block content %} {% endblock %}
+
+</body>
+</html>
+

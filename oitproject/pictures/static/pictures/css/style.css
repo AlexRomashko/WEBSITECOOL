@@ -1,0 +1,276 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff url('../images/5137894.jpg') no-repeat center center;
+  background-size: cover; /* Растянуть изображение */
+  height: 100%; /* Высота равна высоте содержимого */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку, если фон больше экрана */
+  scroll-behavior: smooth;
+}
+
+.header {
+  background: rgb(60, 60, 60);
+  overflow: hidden;
+  padding: 20px 15px;
+  position: fixed; /* Закрепляем header */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%; /* Ширина header */
+  z-index: 1000;
+  border-radius: 15px; /* Закругленные края */
+  margin = 0;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+.welcome {
+  margin-top: 150px;
+  margin-bottom: 100px;
+  margin-left: 250px;
+  padding: 0; /* Высота экрана за вычетом header */
+  color: white;
+  text-align: left;
+  padding-right: 100px;
+}
+
+.welcome p {
+  padding: 0;
+  margin: 0;
+  font-size: 5rem;
+}
+
+.welcome p:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+#one {
+  padding-left: 75px;
+  font-size: 6rem;
+  opacity: 0; /* начальное значение непрозрачности */
+  animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+  animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+  animation-duration: 1.5s; /* длительность анимации в 1 секунду */
+}
+
+#two {
+  animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+  animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+  animation-duration: 2.25s; /* длительность анимации в 1 секунду */
+}
+
+#three {
+  padding-left: 150px;
+  animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+  animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+  animation-duration: 2.5s; /* длительность анимации в 1 секунду */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+}
+
+.info {
+  padding-top: 60px;
+  color: white;
+  padding-left: 300px;
+  padding-right: 300px;
+  font-size: 1.5rem;
+  animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+  animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+  animation-duration: 2.5s; /* длительность анимации в 1 секунду */
+}
+
+.gosl {
+    float:left; /* Выравнивание по левому краю */
+    margin: 0px 30px 10px 0; /* Отступы вокруг картинки */
+}
+
+#biginfo {
+    font-size: 4rem;
+    margin: 20px;
+}
+
+
+.posts {
+  color: white;
+   margin-left: 250px;
+   margin-right: 0px;
+}
+
+.posts ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+.posts ul li {
+  background: rgb(60, 60, 60);
+  padding-top: 1px;
+  padding-bottom: 60px;
+  padding-left: 30px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-left: 0px;
+}
+
+.posts a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  background-color: lavender;
+   /* Занимает всё доступное место справа от панели */
+}
+
+.posts a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.post-header {
+    display: flex; /* Включает flexbox */
+    justify-content: space-between; /* Заголовок слева, дата справа */
+    align-items: center; /* Выравнивание по вертикали */
+    margin: 0;
+    padding: 0;
+}
+
+.post-header .title {
+    font-size: 1.5em; /* Размер шрифта для заголовка */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.post-header .date {
+    font-size: 1em; /* Размер шрифта для даты */
+    color: gray; /* Цвет даты */
+    padding-right: 0px;
+    padding-left: 5px;
+    margin-left: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.content-wrapper {
+    display: flex; /* Используем flexbox для горизонтального расположения nav и posts */
+    margin-top: 100px;
+    align: center;
+    margin-left: 200px;
+    margin-right:200px;
+}
+
+.panel {
+    position: fixed;
+    width: 200px; /* Ширина боковой панели */
+    background-color: rgb(60, 60, 60);  /* Фон панели */
+    border-radius: 20px;
+    padding: 10px;
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Располагаем ссылки вертикально */
+    gap: 20px; /* Расстояние между ссылками */
+    border-right: 1px solid #ccc; /* Горизонтальная линия справа */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Тень для визуального эффекта */
+    margin-right: 20px;
+    height: calc(100vh - 500px);
+    overflow-y: auto; /* Добавляем скроллинг внутри панели при переполнении */
+    z-index: 100;
+    margin-top: 40px;
+}
+
+.panel a {
+    color: white;
+    border-radius: 4px;
+  text-align: left;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.panel a:hover {
+    color: #0c6a89;
+}
+
+.panel a.active {
+    color: dodgerblue
+}
+
+.cat {
+    margin: 0; /* Убирает отступы сверху и снизу */
+    padding: 0; /* Убирает внутренние отступы */
+    font-size: 1em; /* Настраивает размер текста для категории */
+    color: #a5908b; /* Добавляет стиль к категории */
+}
+
+.post {
+  color: white;
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.post-title {
+  background: rgb(60, 60, 60);
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.post-content {
+  background: rgb(60, 60, 60);
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.post-date {
+  background: rgb(60, 60, 60);
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-left: 780px;
+}

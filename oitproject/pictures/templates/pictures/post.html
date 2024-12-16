@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load pictures_tags %}
+
+{% for p in posts %}
+<div class="post">
+    <h1 class="post-title">{{ p.title }}</h1>
+    <p class="post-content">{{ p.content }} <p class="post-date">{{ p.date }}</p></p>
+</div>
+{% endfor %}
+{% endblock %}

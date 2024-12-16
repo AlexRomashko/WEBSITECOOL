@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load pictures_tags %}
+
+
+<div class="content-wrapper">
+    <nav class="panel">
+    {% getCategories as categories %}
+    <a class="{% if active_cat == 0 %}active{% endif %}" href="{% url 'articles' 0 %}">Все</a>
+    {% for cat in categories %}
+        <a class="{% if active_cat == cat.id %}active{% endif %}" href="{% url 'articles' cat.id %}">{{ cat.name }}</a>
+    {% endfor %}
+</nav>
+<div class="posts">
+<h1>Статьи главнокомандующего</h1>
+
+
+
+  <ul>
+    {% for p in posts %}
+    <li>
+      <div class="post-header">
+                <h2 class="title">{{ p.title }}</h2>
+                <span class="date">{{ p.date }}</span>
+      </div>
+        <p class="cat">{{ p.cat_id.name }}</p>
+      <p>{{ p.content|linebreaks|truncatewords:50 }}</p>
+      <p><a href="{% url 'post' p.id %}">Читать статью</a></p>
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
+</div>
+{% endblock %}
